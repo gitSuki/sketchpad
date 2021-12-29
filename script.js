@@ -17,7 +17,7 @@ function makeGrid (gridSize) {
         
         for (x = 0; x<gridSize; x++) {
             let xBox = document.createElement('div')
-            xBox.id = `xbox` + x
+            xBox.id = y + `0` + x
             xBox.className = `xBox`
             xBox.style.width = `${boxSize}px`
             xBox.style.height = `${boxSize}px`
@@ -27,3 +27,10 @@ function makeGrid (gridSize) {
 }
 
 makeGrid(gridSize)
+
+const boxHover = document.querySelectorAll('.xBox')
+for (let i in boxHover) {
+    boxHover[i].addEventListener("mouseover", function(event) {
+        event.target.style.backgroundColor = "black"
+    })
+}
