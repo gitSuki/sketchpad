@@ -28,9 +28,31 @@ function makeGrid (gridSize) {
 
 makeGrid(gridSize)
 
+
 const boxHover = document.querySelectorAll('.xBox')
-for (let i in boxHover) {
+
+//Runs through each node in the boxHover nodelist
+boxHover.forEach((box) => {
+    //Adds event listeners to every box
+    box.addEventListener("mouseover", e =>
+    //Adds the over CSS class to every box
+    box.classList.add('hover')) 
+})
+
+
+
+/*
+for (box in boxHover) {
+    boxHover[box].addEventListener("mouseover", () => boxHover[box].style = ".hover")
+}
+*/
+
+
+/*
+const boxHover = document.querySelectorAll('.xBox')
+for (let i = 0; i <boxHover.length; i++) {
     boxHover[i].addEventListener("mouseover", function(event) {
         event.target.style.backgroundColor = "black"
     })
 }
+*/

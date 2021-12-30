@@ -29,3 +29,8 @@ body { /* removes default margin and padding on body */
     border-style:solid;
     border-width: 1px;
 }
+
+.hover {
+    transition: all .15s ease-in;
+    background-color: black;
+}
