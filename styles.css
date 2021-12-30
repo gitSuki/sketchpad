@@ -1,4 +1,6 @@
 * {
+    -webkit-appearance: none;
+    appearance: none;
     box-sizing: border-box; /* Keeps box size consistent regardless of margin/padding/etc */
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none; /* Removes link underlines */
@@ -29,4 +31,30 @@ body { /* removes default margin and padding on body */
 .hover {
     transition: all .15s ease-in;
     background-color: black;
+}
+
+.sliderContainer {
+    width: 100%;
+}
+
+input {
+    width: 40em;
+    height: 1em;
+    background: lightgray;
+    opacity: 0.7;
+    -webkit-transition: 0.5s;
+    transition: opacity .5s;
+}
+
+input:hover {
+    opacity: 1;
+}
+
+input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.25em;
+    height: 1.25em;
+    cursor: pointer;
+    background: black;
 }

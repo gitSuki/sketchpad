@@ -4,6 +4,20 @@ const clearButton = document.createElement('button')
 clearButton.textContent = "Clear Sketchpad"
 container.append(clearButton)
 
+const sliderContainer = document.createElement('div')
+const sliderBar = document.createElement('input')
+const sliderLabel = document.createElement('label')
+const sliderDisplay = document.createElement('div')
+sliderBar.type = 'range'
+sliderBar.min = '8'
+sliderBar.max = '64'
+sliderBar.value = '16'
+sliderLabel.textContent = 'Change the size of the grid'
+container.append(sliderContainer)
+sliderContainer.append(sliderBar)
+sliderContainer.append(sliderLabel)
+sliderContainer.append(sliderDisplay)
+
 
 function makeGrid (gridSize) {
     const gridBox = document.createElement('div')
@@ -30,16 +44,21 @@ function makeGrid (gridSize) {
 }
 
 
-makeGrid(gridSize)
+makeGrid(sliderBar.value)
+let boxHover = document.querySelectorAll('.xBox')
 
-const boxHover = document.querySelectorAll('.xBox')
-//Runs through each node in the boxHover nodelist
-boxHover.forEach((box) => {
-    //Adds mousever event listeners to every box
-    box.addEventListener("mouseover", () =>
-    //Adds the over CSS class to every box
-    box.classList.add('hover')) 
-})
+function enableHover() {
+    boxHover = document.querySelectorAll('.xBox')
+    //Runs through each node in the boxHover nodelist
+    boxHover.forEach((box) => {
+        //Adds mousever event listeners to every box
+        box.addEventListener("mouseover", () =>
+        //Adds the over CSS class to every box
+        box.classList.add('hover')) 
+    })
+    sliderDisplay.textContent = `${sliderBar.value} x ${sliderBar.value} Grid`
+}
+enableHover()
 
 //Adds a click event listener to the clear button
 clearButton.addEventListener("click", () => {
@@ -47,4 +66,12 @@ clearButton.addEventListener("click", () => {
     boxHover.forEach((box) => {
     box.classList.remove('hover')
     })
+})
+
+sliderBar.addEventListener("mouseup", () => {
+    boxHover.forEach((box) => {
+        box.remove()
+    })
+    makeGrid(sliderBar.value)
+    enableHover()
 })
