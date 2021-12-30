@@ -16,10 +16,6 @@ body { /* removes default margin and padding on body */
     padding: 0px;
 }
 
-.grid {
-    padding: 30px;
-}
-
 .yBox {
     display: flex;
 }

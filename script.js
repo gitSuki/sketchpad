@@ -1,5 +1,8 @@
 let gridSize = 16
 const container = document.querySelector(`.container`)
+const clearButton = document.createElement('button')
+clearButton.textContent = "Clear Sketchpad"
+container.append(clearButton)
 
 
 function makeGrid (gridSize) {
@@ -26,33 +29,22 @@ function makeGrid (gridSize) {
     }
 }
 
+
 makeGrid(gridSize)
 
-
 const boxHover = document.querySelectorAll('.xBox')
-
 //Runs through each node in the boxHover nodelist
 boxHover.forEach((box) => {
-    //Adds event listeners to every box
-    box.addEventListener("mouseover", e =>
+    //Adds mousever event listeners to every box
+    box.addEventListener("mouseover", () =>
     //Adds the over CSS class to every box
     box.classList.add('hover')) 
 })
 
-
-
-/*
-for (box in boxHover) {
-    boxHover[box].addEventListener("mouseover", () => boxHover[box].style = ".hover")
-}
-*/
-
-
-/*
-const boxHover = document.querySelectorAll('.xBox')
-for (let i = 0; i <boxHover.length; i++) {
-    boxHover[i].addEventListener("mouseover", function(event) {
-        event.target.style.backgroundColor = "black"
+//Adds a click event listener to the clear button
+clearButton.addEventListener("click", () => {
+    //Once clicked, it will reun through every box defined in boxHover and remove the hover class
+    boxHover.forEach((box) => {
+    box.classList.remove('hover')
     })
-}
-*/
+})
