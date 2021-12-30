@@ -5,6 +5,7 @@
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none; /* Removes link underlines */
     color: inherit; /* Overrides blue color of links */
+    font-size: 24px;
 }
 
 body { /* removes default margin and padding on body */
@@ -32,6 +33,7 @@ body { /* removes default margin and padding on body */
 }
 
 input {
+    margin-top: 10px;
     width: 40em;
     height: 1em;
     background: lightgray;
@@ -54,6 +56,8 @@ input::-webkit-slider-thumb {
 }
 
 .footer {
+    position: relative;
+    bottom: 0;
     color: white;
     margin-top: 2.5em;
     background-color: black;

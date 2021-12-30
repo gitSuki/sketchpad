@@ -21,7 +21,7 @@ function makeGrid (gridSize) {
     container.append(gridBox)
     const grid = document.createElement('grid')
     gridBox.classList.add('grid')
-    boxSize = 500/gridSize
+    boxSize = 700/gridSize
     
     for (y = 0; y<gridSize; y++) {
         let yBox = document.createElement('div')
