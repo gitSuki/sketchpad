@@ -6,16 +6,13 @@ container.append(clearButton)
 
 const sliderContainer = document.createElement('div')
 const sliderBar = document.createElement('input')
-const sliderLabel = document.createElement('label')
 const sliderDisplay = document.createElement('div')
 sliderBar.type = 'range'
 sliderBar.min = '8'
 sliderBar.max = '64'
 sliderBar.value = '16'
-sliderLabel.textContent = 'Change the size of the grid'
 container.append(sliderContainer)
 sliderContainer.append(sliderBar)
-sliderContainer.append(sliderLabel)
 sliderContainer.append(sliderDisplay)
 
 

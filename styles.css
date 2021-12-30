@@ -4,12 +4,6 @@
     box-sizing: border-box; /* Keeps box size consistent regardless of margin/padding/etc */
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none; /* Removes link underlines */
-}
-
-a {
-    display: flex;
-    flex-direction: column;
-    align-items: space-around;
     color: inherit; /* Overrides blue color of links */
 }
 
@@ -57,4 +51,11 @@ input::-webkit-slider-thumb {
     height: 1.25em;
     cursor: pointer;
     background: black;
+}
+
+.footer {
+    color: white;
+    margin-top: 2.5em;
+    background-color: black;
+    padding: 10px;
 }
